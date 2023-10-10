@@ -1,7 +1,7 @@
-a = [2, 5, 4, 2, 8, 5, 2]
-b = []
+a = [1, 2, 3, 4]
+b = [0, 0, 0, 0]
 
-for i in range(6, -1, -1):
-    b.append(a[i])
+for x in range(4):
+    b[3 - x] = a[x]
 
 print(b)
