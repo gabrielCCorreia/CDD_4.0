@@ -1,7 +1,7 @@
-num = []
+num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 for x in range(10):
-    num.append(int(input(f"Digite o {x + 1}° número: ")))
+    num[x] = int(input(f"Digite o {x + 1}° número: "))
 
 impares = 0
 print("\nÍmpare(s): ", end="")
