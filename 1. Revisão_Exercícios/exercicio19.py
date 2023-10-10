@@ -1,11 +1,14 @@
-a = []
-num = -1
-contador = 0
+a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+impar = 0
+cont = 0
 
-while contador < 10:
-    num += 1
-    if num % 2 != 0:
-        a.append(num)
-        contador += 1
+while True:
+    if cont % 2 != 0:
+        a[impar] = cont
+        impar += 1
+    cont += 1
+
+    if impar >= 10:
+        break
 
 print(a)
