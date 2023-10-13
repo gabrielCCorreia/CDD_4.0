@@ -1,11 +1,18 @@
-from biblioteca import escolher_palavra
+from biblioteca import *
 
 palavra = escolher_palavra()
 palavra_escondida = ['_' for x in palavra]
-erros_maximos = 6
+erros_maximos = 7
 erros = 0
+repeticao = True
 
 while True:
+
+    if repeticao:
+        bonequinho_forca(erros)
+        print(' '.join(palavra_escondida))
+    repeticao = True
+
     letra = input("Adivinhe uma letra: ").lower()
 
     if letra in palavra:
@@ -14,12 +21,15 @@ while True:
                 palavra_escondida[i] = letra
     else:
         erros += 1
+        bonequinho_forca(erros)
+        print(' '.join(palavra_escondida))
+        repeticao = False
         print("Letra não encontrada na palavra.")
-        print(f"Erros restantes: {erros_maximos - erros}")
-
-    print(' '.join(palavra_escondida))
+        print(f"Erro(s) restante(s): {erros_maximos - erros}")
 
     if '_' not in palavra_escondida:
+        bonequinho_forca(erros)
+        print(' '.join(palavra_escondida))
         print("Parabéns! Você ganhou!")
         break
 
